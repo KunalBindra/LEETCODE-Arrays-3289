@@ -1,0 +1,15 @@
+class Solution {
+    public int[] getSneakyNumbers(int[] nums) {
+       Arrays.sort(nums);
+       ArrayList<Integer> ans=new ArrayList<>();
+       for(int i=1;i<nums.length;i++)
+       {
+        if(nums[i]==nums[i-1])
+        {
+            ans.add(nums[i]);
+        }
+       }
+       int [] an=ans.stream().mapToInt(Integer::intValue).toArray();
+       return an;
+    }
+}
